@@ -1,0 +1,19 @@
+RM := rm -rf
+TARGET := program
+OBJS := leftistheapnode.o leftistheap.o program.o
+SRCS := leftistheapnode.cpp leftistheap.cpp program.cpp
+
+all: $(TARGET)
+
+$(TARGET): $(OBJS) $(SRCS)
+	@echo 'Building ' $(TARGET)
+	@g++ -o $(TARGET) $(OBJS)
+	@echo 'End of build'
+	
+%.o: %.cpp
+	@echo 'Building $@ from $<'
+	@g++ -o $@ -c $<
+	
+clean:
+	@echo "cleaning"
+	$(RM) $(OBJS) $(TARGET)
