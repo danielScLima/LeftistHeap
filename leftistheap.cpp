@@ -3,12 +3,12 @@
 #include <queue>
 #include <string>
 
-LeftistHeap::LeftistHeap()
+LeftistHeapDS::LeftistHeapDS()
 {
 
 }
 
-LeftistHeap::~LeftistHeap()
+LeftistHeapDS::~LeftistHeapDS()
 {
     if (root != nullptr)
     {
@@ -17,7 +17,7 @@ LeftistHeap::~LeftistHeap()
     }
 }
 
-void LeftistHeap::dealockSubTree(LeftistHeapNode *node)
+void LeftistHeapDS::dealockSubTree(LeftistHeapNode *node)
 {
     if (node == nullptr)
         return;
@@ -34,12 +34,12 @@ void LeftistHeap::dealockSubTree(LeftistHeapNode *node)
     }
 }
 
-LeftistHeapNode *LeftistHeap::getRoot()
+LeftistHeapNode *LeftistHeapDS::getRoot()
 {
     return root;
 }
 
-void LeftistHeap::insert(int data)
+void LeftistHeapDS::insert(int data)
 {
     if (root == nullptr)
     {
@@ -100,7 +100,7 @@ void LeftistHeap::insert(int data)
     } //end of root not null
 }
 
-void LeftistHeap::checkAndCorrectIfNeeded(LeftistHeapNode *node)
+void LeftistHeapDS::checkAndCorrectIfNeeded(LeftistHeapNode *node)
 {
     if (root == nullptr)
         return;
@@ -129,12 +129,12 @@ void LeftistHeap::checkAndCorrectIfNeeded(LeftistHeapNode *node)
     }
 }
 
-void LeftistHeap::updateNPLToAllHeap()
+void LeftistHeapDS::updateNPLToAllHeap()
 {
     root->calculateStoreAndReturnNPL();
 }
 
-LeftistHeapNode *LeftistHeap::removeMin()
+LeftistHeapNode *LeftistHeapDS::removeMin()
 {
     if (root == nullptr)
         return nullptr;
@@ -152,10 +152,10 @@ LeftistHeapNode *LeftistHeap::removeMin()
     }
     root = nullptr;
 
-    LeftistHeap* leftistHeapLeft = new LeftistHeap();
+    LeftistHeapDS* leftistHeapLeft = new LeftistHeapDS();
     leftistHeapLeft->setRoot(left);
 
-    LeftistHeap* leftistHeapRight = new LeftistHeap();
+    LeftistHeapDS* leftistHeapRight = new LeftistHeapDS();
     leftistHeapRight->setRoot(right);
 
     merge(leftistHeapLeft->getRoot(), leftistHeapRight->getRoot());
@@ -169,7 +169,7 @@ LeftistHeapNode *LeftistHeap::removeMin()
     return backupRoot;
 }
 
-bool LeftistHeap::search(int data)
+bool LeftistHeapDS::search(int data)
 {
     if (root == nullptr)
         return false;
@@ -177,7 +177,7 @@ bool LeftistHeap::search(int data)
         return root->search(data);
 }
 
-const std::string LeftistHeap::gitDotFileMode2()
+const std::string LeftistHeapDS::gitDotFileMode2()
 {
     std::string textToFile = "digraph g{";
     textToFile += "node [shape=record, height=0.1]";
@@ -197,7 +197,7 @@ const std::string LeftistHeap::gitDotFileMode2()
     return textToFile;
 }
 
-const std::string LeftistHeap::gitDotFileMode1()
+const std::string LeftistHeapDS::gitDotFileMode1()
 {
     std::string textToFile = "digraph g{";
     textToFile += "Root[shape=none fontcolor=blue];";
@@ -218,28 +218,28 @@ const std::string LeftistHeap::gitDotFileMode1()
     return textToFile;
 }
 
-const std::string LeftistHeap::preOrder()
+const std::string LeftistHeapDS::preOrder()
 {
     std::string content;
     preOrder(root, content);
     return content;
 }
 
-const std::string LeftistHeap::inOrder()
+const std::string LeftistHeapDS::inOrder()
 {
     std::string content;
     inOrder(root, content);
     return content;
 }
 
-const std::string LeftistHeap::posOrder()
+const std::string LeftistHeapDS::posOrder()
 {
     std::string content;
     posOrder(root, content);
     return content;
 }
 
-const std::string LeftistHeap::InLevelOrder()
+const std::string LeftistHeapDS::InLevelOrder()
 {
     std::string content;
 
@@ -266,7 +266,7 @@ const std::string LeftistHeap::InLevelOrder()
     return content;
 }
 
-void LeftistHeap::preOrder(struct LeftistHeapNode* node, std::string& content)
+void LeftistHeapDS::preOrder(struct LeftistHeapNode* node, std::string& content)
 {
     if (node != nullptr)
     {
@@ -275,7 +275,7 @@ void LeftistHeap::preOrder(struct LeftistHeapNode* node, std::string& content)
         preOrder(node->right, content);
     }
 }
-void LeftistHeap::inOrder(struct LeftistHeapNode* node, std::string& content)
+void LeftistHeapDS::inOrder(struct LeftistHeapNode* node, std::string& content)
 {
     if (node != nullptr)
     {
@@ -284,7 +284,7 @@ void LeftistHeap::inOrder(struct LeftistHeapNode* node, std::string& content)
         inOrder(node->right, content);
     }
 }
-void LeftistHeap::posOrder(struct LeftistHeapNode* node, std::string& content)
+void LeftistHeapDS::posOrder(struct LeftistHeapNode* node, std::string& content)
 {
     if (node != nullptr)
     {
@@ -294,7 +294,7 @@ void LeftistHeap::posOrder(struct LeftistHeapNode* node, std::string& content)
     }
 }
 
-void LeftistHeap::exibirSubArvore1
+void LeftistHeapDS::exibirSubArvore1
 (
     struct LeftistHeapNode* n,
     std::string& content,
@@ -335,7 +335,7 @@ void LeftistHeap::exibirSubArvore1
     }
 }
 
-void LeftistHeap::exibirSubArvore2
+void LeftistHeapDS::exibirSubArvore2
 (
     struct LeftistHeapNode *father,
     bool isLeftSon,
@@ -387,18 +387,18 @@ void LeftistHeap::exibirSubArvore2
     }
 }
 
-void LeftistHeap::merge(LeftistHeapNode *heapOne, LeftistHeapNode *heapTwo)
+void LeftistHeapDS::merge(LeftistHeapNode *heapOne, LeftistHeapNode *heapTwo)
 {
     std::vector<LeftistHeapNode*> stack;
     merge(heapOne, heapTwo, stack);
 }
 
-void LeftistHeap::setRoot(LeftistHeapNode *node)
+void LeftistHeapDS::setRoot(LeftistHeapNode *node)
 {
     this->root = node;
 }
 
-void LeftistHeap::merge(LeftistHeapNode *heapOne, LeftistHeapNode *heapTwo, std::vector<LeftistHeapNode*>& stack)
+void LeftistHeapDS::merge(LeftistHeapNode *heapOne, LeftistHeapNode *heapTwo, std::vector<LeftistHeapNode*>& stack)
 {
     if (heapOne == nullptr && heapTwo == nullptr)
         return;
@@ -448,7 +448,7 @@ void LeftistHeap::merge(LeftistHeapNode *heapOne, LeftistHeapNode *heapTwo, std:
     }
 }
 
-void LeftistHeap::insertInHeapOfMerge(LeftistHeapNode *node, std::vector<LeftistHeapNode*> &stack)
+void LeftistHeapDS::insertInHeapOfMerge(LeftistHeapNode *node, std::vector<LeftistHeapNode*> &stack)
 {
     node->father = nullptr;
 

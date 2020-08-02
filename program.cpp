@@ -8,7 +8,7 @@ TEST_CASE( "Testing the insert calls in the heap", "[single-file]" )
 {
     SECTION( "Inserting" )
 	{
-		LeftistHeap f;
+		LeftistHeapDS f;
 		
 		LeftistHeapNode* root = f.getRoot();
 		REQUIRE (root == nullptr);
@@ -198,7 +198,7 @@ TEST_CASE( "Testing the remove min calls in the heap", "[single-file]" )
 {	
 	SECTION( "Removing the min" )
 	{
-		LeftistHeap f;
+		LeftistHeapDS f;
 		f.insert(50);	
 		f.insert(22);
 		f.insert(30);
@@ -278,7 +278,7 @@ TEST_CASE( "Testing the search calls in the heap", "[single-file]" )
 {	
 	SECTION( "search calls" )
 	{	
-		LeftistHeap f;
+		LeftistHeapDS f;
 		f.insert(50);	
 		f.insert(22);
 		f.insert(30);
@@ -299,7 +299,7 @@ TEST_CASE( "Testing the search and remove calls in the heap", "[single-file]" )
 {	
 	SECTION( "search calls, case 2" )
 	{	
-		LeftistHeap f;
+		LeftistHeapDS f;
 		f.insert(50);	
 		f.insert(22);
 		f.insert(30);

@@ -7,17 +7,17 @@
 #include "leftistheapnode.h"
 
 /*!
- * \brief The LeftistHeap class
+ * \brief The LeftistHeapDS class
  */
-class LeftistHeap
+class LeftistHeapDS
 {
 public:
     /*!
-     * \brief LeftistHeap
+     * \brief LeftistHeapDS
      */
-    LeftistHeap();
+    LeftistHeapDS();
 
-    ~LeftistHeap();
+    ~LeftistHeapDS();
 
     /*!
      * \brief getRoot
