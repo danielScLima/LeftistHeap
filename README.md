@@ -1,5 +1,6 @@
 Leftist Heap
 ====================
+Building with Travis: [![Build Status](https://www.travis-ci.com/danielScLima/LeftistHeap.svg?branch=master)](https://www.travis-ci.com/danielScLima/LeftistHeap)
 
 This repository has a project with the implementation of a Leftist Heap.
 
