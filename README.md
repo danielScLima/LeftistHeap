@@ -1,5 +1,7 @@
 Leftist Heap
 ====================
+Building with AppVeyor: [![Build status](https://ci.appveyor.com/api/projects/status/g3qynqmihjnhjwxt?svg=true)](https://ci.appveyor.com/project/DanielSLima/leftistheap)
+
 Building with Travis: [![Build Status](https://www.travis-ci.com/danielScLima/LeftistHeap.svg?branch=master)](https://www.travis-ci.com/danielScLima/LeftistHeap)
 
 This repository has a project with the implementation of a Leftist Heap.
